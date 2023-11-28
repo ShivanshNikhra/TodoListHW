@@ -29,16 +29,8 @@ export default function HomePage() {
   }, [currentUser])
 
   useEffect(() => {
-    console.log("HERE")
-    console.log(process.env.REACT_APP_BACK_END_URL); 
-
+    
     const fetchData = async () => {
-      //console.log(backEndURL); 
-      if(currentUser.accessToken) {
-        console.log("Exists QWQWDQW")
-      } else {
-        console.log("doesnt exist")
-      }
       const tokenFormat = `Bearer ${currentUser.stsTokenManager.accessToken}`
       const headers = { 'Authorization': tokenFormat};
       const url = `${backEndURL}/${currentUser.email}` // `https://tpeo-todo.vercel.app/tasks/${currentUser.username}`
@@ -58,15 +50,6 @@ export default function HomePage() {
 
   // State to hold the list of tasks.
   const [tasks, setTasks] = useState([]);
-
-  useEffect(() => {
-    for (let i = 0; i < tasks.length; i++) {
-      if(tasks[i].finished) {
-        // console.log(tasks[i].name)
-        // console.log(tasks[i].id)
-      }
-    }
-  }, [tasks])
 
 
   /*

@@ -63,10 +63,7 @@ export function AuthProvider({ children }) {
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             setCurrentUser(userCredential.user);
-            console.log("BIG BODY INH TEXAS")
-            console.log(userCredential.user.accessToken)
             localStorage.setItem("user", JSON.stringify(userCredential.user))
-            console.log(JSON.stringify(userCredential.user))
 
             navigate("/");
         })
