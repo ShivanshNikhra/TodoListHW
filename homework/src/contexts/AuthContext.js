@@ -64,7 +64,7 @@ export function AuthProvider({ children }) {
         .then((userCredential) => {
             setCurrentUser(userCredential.user);
             console.log("BIG BODY INH TEXAS")
-            console.log(userCredential.user)
+            console.log(userCredential.user.accessToken)
             localStorage.setItem("user", JSON.stringify(userCredential.user))
             console.log(JSON.stringify(userCredential.user))
 
