@@ -31,8 +31,6 @@ export default function HomePage() {
   useEffect(() => {
     console.log("HERE")
     console.log(process.env.REACT_APP_BACK_END_URL); 
-    console.log(process.env.REACT_APP_RANDOM); 
-    console.log(process.env.POSDQW); 
 
     const fetchData = async () => {
       //console.log(backEndURL); 
